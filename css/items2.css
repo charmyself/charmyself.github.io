@@ -1,0 +1,90 @@
+.h {
+    font-size: 60px;
+    color: rgb(136, 185, 57);
+}
+
+.mid {
+    border-top-width: 1px;
+    /* border: 50px solid red; */
+    width: 100%;
+    /* width: 1500px; */
+    height: 2600px;
+    margin-top: 0px;
+    border-width: 1px;
+}
+
+.midder {
+    position: relative;
+    /* left: 52px; */
+    /* border: 10px solid black; */
+    /* position: absolute; */
+    margin: 0 auto;
+    /* left: 10px; */
+    /* float: left; */
+    /* margin: 10px 0px 10px 5px; */
+    width: 1000px;
+    height: 580px;
+    /* margin-left: 60px; */
+    /* background-color: #79a8a9; */
+    color: rgb(12, 22, 17);
+    /* list-style-type: none; */
+    /* text-decoration: none; */
+}
+
+.a button {
+    width: 100%;
+    text-align: center;
+}
+
+button {
+    text-align: center;
+    height: 60px;
+    padding: 0 2em;
+    background-color: rgb(133, 165, 103);
+    /* background-color: #1aab8a; */
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    position: relative;
+    transition: all ease 800ms;
+    /* 动画渐变显示效果 */
+    border-radius: 20px;
+}
+
+
+/* 点击动效 */
+
+button:hover {
+    background-color: #fff;
+    color: rgb(133, 165, 103);
+    /* color: #1aab8a; */
+}
+
+button:before,
+button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(133, 165, 103);
+    /* background-color: #1aab8a; */
+    /* 边缘移动线颜色 */
+    transition: all ease 400ms;
+}
+
+button:after {
+    top: inherit;
+    right: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+button:hover:after,
+button:hover:before {
+    width: 100%;
+    transition: all ease 800ms;
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        body {
+            /* background-color: royalblue; */
+            background-image: url(images/index/shouye.jpg);
+            /* background-repeat: no-repeat; */
+            /* background-position: center; */
+            background-size: 100%;
+        }
+        
+        div {
+            margin: 0;
+            padding: 0;
+            border-width: 1px;
+        }
+        
+        .header {
+            width: 100%;
+            height: 70px;
+        }
+        
+        .mid {
+            border-top-width: 1px;
+            width: 100%;
+            height: 600px;
+            margin-top: 0px;
+            border-width: 1px;
+        }
+        
+        .mid2 {
+            width: 100%;
+            height: 600px;
+            border-width: 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer {
+            margin-top: 0px;
+            height: 210px;
+            clear: left;
+            width: 100%;
+            font-size: 20px;
+            background-color: rgb(133, 165, 103);
+            color: #FFF;
+            margin-bottom: 0 auto;
+            position: relative;
+        }
+        
+        .footer img {
+            position: relative;
+            top: 50%;
+            left: 30%;
+        }
+        
+        .mider {
+            position: absolute;
+            right: 50px;
+            float: left;
+            margin: 10px 0px 10px 5px;
+            width: 600px;
+            height: 580px;
+        }
+        
+        .lefter {
+            position: relative;
+            left: 10px;
+            float: left;
+            margin: 10px 0px 10px 5px;
+            width: 700px;
+            height: 580px;
+            margin-left: 60px;
+            color: rgb(95, 100, 48);
+            /* list-style-type: none; */
+            /* text-decoration: none; */
+            overflow: auto;
+        }
+        
+        .lefter li {
+            list-style-type: none;
+        }
+        /* 滚动图片 */
+        
+        .wrapper {
+            width: 900px;
+            height: 500px;
+            margin: 10px auto;
+            position: relative;
+            /*记住定位时的常用方法："父相子绝"*/
+        }
+        
+        .container {
+            width: 900px;
+            height: 500px;
+        }
+        
+        .links {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            bottom: 0px;
+        }
+        
+        .links a {
+            display: block;
+            float: left;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            line-height: 20px;
+            text-decoration: none;
+            text-align: center;
+            margin: 5px 2px;
+            opacity: 0.7;
+        }
+        
+        .a1 {
+            background-color: #fff;
+        }
+        
+        .a2 {
+            background-color: #f00;
+        }
+        
+        .lastlefter {
+            position: relative;
+            float: left;
+            width: 30%;
+        }
+        
+        .lastrighter {
+            position: relative;
+            float: right;
+            width: 50%;
+        }
+    </style>
+    <script>
+        var nowImg = 1; //定义变量表示当前要播放的是第几幅图，初始化为1,即从第一幅图开始
+        function show(d) {
+            if (d) //如果传递的有参数
+            {
+                nowImg = d;
+                window.clearTimeout(tid); //清除计时器
+            }
+            for (var i = 1; i <= 5; i++) {
+                if (nowImg == i) {
+                    document.getElementById("img" + i).style.display = "block";
+                    document.getElementById("link" + i).className = "a2";
+                } else {
+                    document.getElementById("img" + i).style.display = "none";
+                    document.getElementById("link" + i).className = "a1";
+                }
+            }
+            if (nowImg == 5)
+                nowImg = 1;
+            else
+                nowImg++;
+            tid = window.setTimeout('show()', 5000);
+            //此处必须定义成全局变量来存放设置计时器返回的id号  
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="nav">
+            <ul class="list">
+                <li>
+                    <a href="index.html">主页</a>
+                </li>
+                <li>
+                    <a href="pages/items1.html">芯片</a>
+                </li>
+                <li>
+                    <a href="pages/items2.html">屏幕</a>
+                </li>
+                <li>
+                    <a href="pages/items3.html">防水</a>
+                </li>
+                <li>
+                    <a href="pages/items11.html">电池</a>
+                </li>
+                <li>
+                    <a href="pages/items11.html">摄像头</a>
+                </li>
+                <li>
+                    <a href="pages/items11.html">NFC</a>
+                </li>
+                <li>
+                    <a href="pages/items11.html">外壳</a>
+                </li>
+                <li>
+                    <a href="pages/items9.html">手机官网</a>
+                </li>
+                <li>
+                    <a href="pages/items10.html">注册提问</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!-- 滚动图片 -->
+    <div>
+
+        <body onload="show();">
+            <div class="wrapper">
+                <div class="container">
+                    <img src="images/index/18p.jpg" id="img1" style="display:none;" />
+                    <img src="images/index/mate40.jpg" id="img2" style="display:none;" />
+                    <img src="images/index/mi11.jpg" id="img3" style="display:none;" />
+                    <img src="images/index/ip12.jpg" id="img4" style="display:none;" />
+                    <img src="images/index/s21.jpg" id="img5" style="display:none;" />
+                </div>
+                <div class="links">
+                    <a href="javascript:show(1);" id="link1"><span></span></a>
+                    <a href="javascript:show(2);" id="link2"><span></span></a>
+                    <a href="javascript:show(3);" id="link3"><span></span></a>
+                    <a href="javascript:show(4);" id="link4"><span></span></a>
+                    <a href="javascript:show(5);" id="link5"><span></span></a>
+                </div>
+            </div>
+    </div>
+    <div class="mid">
+        <div class="lefter">
+            <ul>
+                <li>
+                    <h1>华为</h1>
+                    <h3>华为鸿蒙系统（英文：HUAWEI HarmonyOS），在2019年8月9日，华为在东莞举行华为开发者大会，正式发布操作系统鸿蒙OS</h3>
+                </li>
+                <li>
+                    <h1>小米</h1>
+                    <h3>小米产品总监、MIUI体验总负责人在小米社区发文回应，称已经制定了优化策略，来解决小米11 Ultra手机发热严重的问题。</h3>
+                </li>
+                <li>
+                    <h1>三星</h1>
+                    <h3>据悉，三星将在下半年推出第三代折叠屏手机Galaxy Z Fold 3， 近日又有疑似该机的渲染图曝光， 并传言这款手机将采用一些前所未有的新技术
+                    </h3>
+                </li>
+                <li>
+                    <h1>iPhone</h1>
+                    <h3>苹果在 WWDC21 上带来的 iOS 15 新功能,也预示着大家期盼的 iPhone 门禁卡功能已经不远了。 iOS 15 对许多苹果自家应用进行了更新,其中包括钱包应用。 苹果表示,未来将有更多的钥匙被添加进钱包应用,带来更好的用户体验。
+                    </h3>
+                </li>
+                <li>
+                    <h1>OPPO</h1>
+                    <h3>OPPO 今天下午发布了两项新技术:第一个是 10 倍混合光学变焦, 在 159mm 等效焦距的长焦镜头与独创的“潜望式结构”结合以接棒式的方式实现了 10 倍变焦; 第二个则是光域屏幕指纹技术...
+                    </h3>
+                </li>
+                <li>
+                    <h1>vivo</h1>
+                    <h3>2021年6月20日0:00,本届欧洲杯备受瞩目的小组对决——葡萄牙与德国的“旷世之战”开启。 作为2020欧洲杯官方合作伙伴,vivo在北京举办了一场特别的观赛派对,现场邀请数...
+                    </h3>
+                </li>
+                <li>
+                    <h1>魅族</h1>
+                    <h3>小而美的执著</h3>
+                </li>
+                <li>
+                    <h1>坚果</h1>
+                    <h3>字节跳动近日于小范围宣布，原锤子科技团队组建的新石实验室，并入Musical.ly原创始人阳陆育负责的教育硬件团队。 在这之后，他们未来将着重于教育领域，而坚果手机、TNT显示屏业务将停止研发
+                    </h3>
+                </li>
+                <li>
+                    <h1>索尼</h1>
+                    <h3>IT之家 6 月 20 日消息 根据索尼 PlayStation 消息,索尼将邀请玩家参与首次 PS5 游戏主机 Beta 版系统测试, 目前已经开放申请。 内测用户将有机会体验新版系统的功能,...
+                    </h3>
+                </li>
+            </ul>
+        </div>
+        <div class="mider">
+            <video controls="controls" autoplay="autoplay"> <source src="video/video.mp4" type="video/mp4" />
+		</div>
+		<!-- <div class="righter"></div> -->
+	</div>
+	<div class="mid2">	
+				<img src="images/index/phonecuplist.jpg" alt="" class="mider2">	
+	</div>
+	<div class="footer">
+        
+        <div class="lastlefter">
+            <a href="#"><img src="logo.png" alt=""></a>
+     
+        </div>
+        <div class="lastrighter">
+           
+            <p>联系我们: 邮箱:33445w@gmail.com</p>
+            <p>更多联系方式：</p>
+            <a href="#"><img src="images/index/tw.png" alt="" ></a>
+            <a href="#"><img src="images/index/fb.png" alt=""></a>
+            <a href="#"><img src="images/index/ins.png" alt=""></a>
+            <p>版权所有：手机硬件科普网站创始人。All rights Reserved</p>
+    </div>
+	</div>
+</body>
+</html>
